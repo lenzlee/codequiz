@@ -41,8 +41,8 @@ var initialsField = document.getElementById("userInitials");
 
 var randomQuestions, currentQuestionIndex;
 
-// Start button trigger the first Q and next button to display
-startButton.addEventListener("click", startGame);
+// Start button triggers the question and next button display
+startButton.addEventListener("click", startQuiz);
 nextButton.addEventListener("click", () => {
     currentQuestionIndex++
     setNextQuestion()
@@ -52,7 +52,7 @@ nextButton.addEventListener("click", () => {
 // Countdown timer
 function countdownTimer() {
     timeLeft--;
-    timerEl.textContent = "Time: " + timeLeft;
+    timerEl.textContent = "Time Left: " + timeLeft;
     if (timeLeft <= 0) {
         saveScore();
     }
@@ -60,7 +60,7 @@ function countdownTimer() {
 
 
 // Start Quiz
-function startGame() {
+function startQuiz() {
     timerID = setInterval(countdownTimer, 1000);
     startContainerEl.classList.add("hide");
     randomQuestions = questions.sort(() => Math.random() - .5)
@@ -70,13 +70,6 @@ function startGame() {
     // Timer starts when start button is clicked
     countdownTimer();
     setNextQuestion();
-};
-
-
-// Go to next question
-function setNextQuestion() {
-    resetState();
-    showQuestion(randomQuestions[currentQuestionIndex]);
 };
 
 
@@ -95,6 +88,11 @@ function showQuestion(question) {
     })
 };
 
+// Go to next question
+function setNextQuestion() {
+    resetState();
+    showQuestion(randomQuestions[currentQuestionIndex]);
+};
 
 // Reset state function
 function resetState() {
@@ -161,7 +159,7 @@ function clearStatusClass(element) {
 // Save scores
 function saveScore() {
     clearInterval(timerID);
-    timerEl.textContent = "Time: " + timeLeft;
+    timerEl.textContent = "Time Left: " + timeLeft;
     setTimeout(function () {
         questionContainerEl.classList.add("hide");
         document.getElementById("sContainer").classList.remove("hide");
@@ -178,7 +176,7 @@ var loadScores = function () {
         return false;
     }
 
-    // Convert scores from stringfield format into array
+    // Convert scores from string field format into array
     savedScores = JSON.parse(savedScores);
     var initials = document.querySelector("#initials").value;
     var newScore = {
