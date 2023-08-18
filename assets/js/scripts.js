@@ -33,14 +33,13 @@ var answerButtonsEl = document.getElementById("aButtons");
 var checkAnswerEl = document.getElementById("see-answer");
 var viewHighScores = document.getElementById("highscores-link");
 var submitButton = document.getElementById("submitButton");
-var clearScoreButton = document.getElementById("clear-btn");
-var initialsField = document.getElementById("player-name");
-var restartButton = document.getElementById("restart-btn");
-var scoreField = document.getElementById("player-score");
+var clearScoreButton = document.getElementById("clearButton");
+var scoreField = document.getElementById("score");
 var scores = JSON.parse(localStorage.getItem("scores")) || [];
+var restartButton = document.getElementById("restart");
+var initialsField = document.getElementById("userInitials");
 
 var randomQuestions, currentQuestionIndex;
-
 
 // Start button trigger the first Q and next button to display
 startButton.addEventListener("click", startGame);
@@ -122,7 +121,7 @@ function selectAnswer(e) {
         if (timeLeft <= 15) {
             timeLeft = 0;
         } else {
-            // If incorrect, deduct time by 15
+            // If incorrect, deduct time by 15 seconds
             timeLeft -= 15;
         }
     }
@@ -141,7 +140,7 @@ function selectAnswer(e) {
 };
 
 
-// Check and show the correct answer by set the buttons colors
+// Show the correct answer by setting colors for the buttons
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
@@ -164,7 +163,6 @@ function saveScore() {
     clearInterval(timerID);
     timerEl.textContent = "Time: " + timeLeft;
     setTimeout(function () {
-        //localStorage.setItem("scores", JSON.stringify(scores));
         questionContainerEl.classList.add("hide");
         document.getElementById("sContainer").classList.remove("hide");
         document.getElementById("your-score").textContent = "Your final score is " + timeLeft;
@@ -212,7 +210,6 @@ function showHighScores(initials) {
 
     var highScoreEl = document.getElementById("highscore");
     highScoreEl.innerHTML = "";
-    //console.log(scores)
     for (i = 0; i < scores.length; i++) {
         var div1 = document.createElement("div");
         div1.setAttribute("class", "name-div");
