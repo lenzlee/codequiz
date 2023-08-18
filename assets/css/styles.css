@@ -1,0 +1,141 @@
+/* Colors Defined */
+
+:root {
+  --success: #008000;
+  --fail: #EE4B2B;
+  --white: #ffffff;
+  --primary: #922247;
+  --secondary: #FEBC18;
+}
+
+body {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  line-height: 1.5;
+  width: 50%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+
+.scores a,
+.timer {
+  font-size: 20px;
+}
+
+.scores a {
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.scores a:hover {
+  color: var(--secondary);
+}
+
+/* containerStart section styles */
+.start-quiz {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: var(--secondary);
+  border-top: 1px solid var(--secondary);
+  margin: 20px 0;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Buttons Styles */
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  width: auto;
+  overflow: visible;
+  padding: 10px;
+  background-color: var(--primary);
+  border-radius: 10px;
+  font-size: large;
+  margin: 10px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary);
+}
+
+.hide {
+  display: none;
+}
+
+.btn.correct {
+  background-color: var(--success);
+}
+
+.btn.wrong {
+  background-color: var(--fail);
+}
+
+/* Wrapper for buttons */
+.start-quiz-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+/* Input Initial */
+input[type="text"] {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Highscores Styles */
+.highscore {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.name-div,
+.score-div {
+  flex: 1 35%;
+  padding: 10px 0;
+  border: 1px solid var(--success);
+}
+
+/* media query - any screen smaller than 575px */
+@media screen and (max-width: 575px) {
+  .btn-grid {
+    grid-template-columns: repeat(1, auto);
+    gap: 0;
+    margin: 0;
+  }
+}

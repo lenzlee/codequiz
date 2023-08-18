@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bootcamp HW 4: Code Quiz</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="scores">
+            <a id="highscores-link">View Highscores</a>
+        </div>
+        <div id="timerCountdown" class="timer">
+            Time Left: 30
+        </div>
+    </header>
+
+    <section id="containerStart" class="start-quiz">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Answer all the questions in 30 seconds.<br>Timer starts when Start Quiz button is clicked.<br>Your score reflects the time left after you answer the last question.</p>
+        <!-- Start Quiz Button -->
+        <div class="start-quiz-btn">
+            <button id="startButton" class="start-btn">Start Quiz</button>
+        </div>
+    </section>
+
+    <!-- Questions Container -->
+    <section id="qContainer" class="hide">
+        <h1 id="question">Question</h1>
+        <div id="aButtons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
+        <h2 id="see-answer" class="correct-wrong hide"></h2>
+        <div class="controls">
+            <button id="nextButton" class="nextButton hide">Next</button>
+        </div>
+    </section>
+
+     <!-- Scores Container -->
+    <section id="sContainer" class="hide">
+        <form id="submit-form">
+            <h3 id="your-score"></h3>
+            <label id="initials-label">Enter your initials to save the score:</label>
+            <input type="text" id="initials" maxlength="3" placeholder="Enter your initials" />
+            <button id="submitButton">Submit</button>
+        </form>
+    </section>
+
+   <!-- High Scores Container -->
+    <section id="hScores" class="highscores-container hide">
+        <div id="high-scores">
+            <h1 class="centered">Leaderboard</h1>
+            <div id="highscore" class="highscore highscore-list">
+            </div>
+            <div class="controls">
+                <button id="restart-btn">Restart</button>
+                <button id="clear-btn">Clear Scores</button>
+            </div>
+        </div>
+        
+    </section>
+
+    <script src="/assets/js/scripts.js"></script>
+</body>
+
+</html>
