@@ -11,8 +11,8 @@
 body {
   font-family: 'Bricolage Grotesque', sans-serif;
   line-height: 1.5;
-  width: 50%;
   margin: 0 auto;
+  width: 50%;
 }
 
 a {
@@ -28,12 +28,12 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 25px 0;
+  margin: 30px 0;
 }
 
 .scores a,
 .timer {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .scores a {
@@ -56,8 +56,8 @@ h1 {
 
 h2 {
   color: var(--secondary);
-  border-top: 1px solid var(--secondary);
-  margin: 20px 0;
+  border-top: 1px solid var(--primary);
+  margin: 30px 0;
   font-style: italic;
   text-align: center;
 }
