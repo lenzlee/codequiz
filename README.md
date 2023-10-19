@@ -1,7 +1,7 @@
 # codequiz
-Bootcamp Homework 4: Code Quiz (Timed / Record High Scores)
+Bootcamp Module 4: Code Quiz (Timed / Record High Scores)
 
-## Code Quiz Challenge
+## Web APIs Challenge: Code Quiz
 
 In this project, we were asked to build a timed coding quiz with multiple-choice questions. This app runs in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. 
 
